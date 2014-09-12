@@ -5,6 +5,7 @@ angular.module('app.controllers')
             $scope.$root.title = 'AngularJS SPA | Leagues';
 
             $scope.availableLeagues = [];
+        $scope.suscribedLeages = [];
 
         $scope.loadLeagues = function() {
             League.getAvailableLeagues(function(availableLeagues) {
@@ -12,6 +13,14 @@ angular.module('app.controllers')
             }, function(error) {
                 alert('error loading available leagues');
             });
+
+            League.getSuscribedLeagues(function (suscribedLeagues) {
+                $scope.suscribedLeages = suscribedLeagues;
+            }, function (error) {
+                alert('error loading available leagues');
+            });
+
+
         };
 
             $scope.$on('$viewContentLoaded', function() {

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\AccountLeagues.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\Leagues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

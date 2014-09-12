@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using DomainDrivenDatabaseDeployer;
 using FluentNHibernate.Testing.Values;
 using NHibernate;
@@ -24,16 +25,7 @@ namespace PrediLiga.DatabaseDeployer
                 Name = "Test Name",
                 Password = "password",
             };
-
-            var ligaBbva = _session.QueryOver<Leagues>().Where(x => x.Name == "Liga BBVA").SingleOrDefault();
-
-            account.AddLeagues(ligaBbva);
-            
-
             _session.Save(account);
         }
     }
-
-    
-
 }
